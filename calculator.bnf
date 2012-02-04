@@ -1,0 +1,7 @@
+<prg>      ::= <expr>
+<expr>     ::= <arthexpr> | <ifexpr>
+<arthexpr> ::= (<number> <number> <op>)
+<op>       ::= + | x
+<ifexpr>   ::= IF <expr> <expr> <expr> <expr>
+<number>   ::= <digit> | <digit> <number>
+<digit>    ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
