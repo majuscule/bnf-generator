@@ -87,10 +87,11 @@ string signumber() {
 }
 
 string number() {
-    string number = digit();
+    string n = "";
     if (rand() % 5 == 0)
-        number += digit();
-    return number;
+        n += digit();
+    if (n == "") n += number();
+    return n;
 }
 
 string nonzerodigit() {
