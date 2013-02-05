@@ -1,9 +1,10 @@
-<prg>          ::= <expr> | <expr><EOL><expr>
+<prg>          ::= <expr> | <expr>\n<expr>
 
 <expr>         ::= <arthexpr> | <ifexpr>
-<arthexpr>     ::= (<signumber> <signumber> <op>)
+<arthexpr>     ::= (<operand> <operand> <op>)
+<ifexpr>       ::= IF <operand> <operand> <operand> <operand>
+<operand>      ::= <signumber> | <expr>
 <op>           ::= + | x | / | -
-<ifexpr>       ::= IF <expr> <expr> <expr> <expr>
 
 <signumber>    ::= <nonzerodigit> | <nonzerodigit><number>
 <number>       ::= <digit> | <digit><number>

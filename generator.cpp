@@ -9,8 +9,9 @@ using namespace std;
 string prg();
 string expr();
 string arthexpr();
-string op();
 string ifexpr();
+string operand();
+string op();
 string signumber();
 string number();
 string nonzerodigit();
@@ -54,19 +55,28 @@ string expr() {
 
 string arthexpr() {
     string arthexpr = "("
-                    + signumber() + " "
-                    + signumber() + " "
+                    + operand() + " "
+                    + operand() + " "
                     + op() + ")";
     return arthexpr;
 }
 
 string ifexpr() {
     string ifexpr = "IF "
-                  + expr() + " "
-                  + expr() + " "
-                  + expr() + " "
-                  + expr();
+                  + operand() + " "
+                  + operand() + " "
+                  + operand() + " "
+                  + operand();
     return ifexpr;
+}
+
+string operand() {
+    string operand = "";
+    if (rand() % 5 == 0)
+        operand = expr();
+    else
+        operand = signumber();
+    return operand;
 }
 
 string signumber() {
